@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Philosopher&family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+
+}
+
+:root {
+    --font-01: 'Poppins', sans-serif;
+    --font-02: 'Philosopher', sans-serif;
+
+    /* color  */
+    --global-color-0: #e41345;
+    --global-color-1: #f70077;
+    --global-color-2: #1a1a1a;
+    --global-color-3: #3e4359;
+    --global-color-4: #f7f7f7;
+    --global-color-5: #fff;
+    --global-color-6: #243673;
+    --global-color-7: #BFD1FF;
+
+}
+
+/* sectionFirst */
+
+.sectionFirst {
+    padding: 12rem 0% 15rem;
+}
+
+.sectionFirst::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--global-color-2); */
+    background-image: url("../img/serviceBackGround13.jpg");
+   
+  
+  
+    z-index: -1;
+    opacity: 1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.sectionFirst h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-family: var(--font-02);
+    -webkit-text-stroke: 1px #000; /* Add a black 
+    background: linear-gradient(90deg, #ff8c00, #e960b7, #1e90ff);
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    /* -webkit-text-fill-color: transparent; Makes the text transparent */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    border: 2px solid transparent; /* Transparent border */
+}
+
+.sectionFirst h1:hover {
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow for hover */
+    transform: scale(1.1) rotate(-3deg); /* Enlarge and tilt the text */
+    border: 2px solid #e960b7; /* Add a border on hover */
+    background: linear-gradient(90deg, #1e90ff, #e960b7, #ff8c00); /* Reverse gradient on hover */
+    -webkit-background-clip: text; /* Maintain gradient clipping */
+    -webkit-text-fill-color: transparent; /* Keep text fill transparent */
+}
+
+
+
+.gallery {
+    margin: 5rem 2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    cursor: pointer;
+   
+
+}
+.gallery video {
+    max-width: 100%;
+    height: 19rem;
+    cursor: pointer;
+    object-fit: cover; /* Scales and crops the video to cover the area without stretching */
+  }
+
+
+
+/* DiscountSection */
+
+.DiscountSection {
+    padding: 5rem 5%;
+    
+}
+.DiscountSection .img{
+    border-radius:100px;
+}
+
+
+/* beforeAfter  */
+.beforeAfter {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(200px , 600px));
+    gap: 4rem  1rem;
+    padding: 5rem 2rem; 
+    justify-content: center;
+}
+
+.beforeAfter .gridBox {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.beforeAfter .gridBox .box{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+}
+.beforeAfter .gridBox .box:nth-child(1){
+    flex-direction: column-reverse;
+}
+
+.beforeAfter .gridBox .box .img {
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    box-shadow: 0 0 17px var(--global-color-2);
+    /* padding: .5rem; */
+}
+
+.beforeAfter .gridBox .box .img img {
+    height: 100%;
+    width: 100%;
+}
+
+.beforeAfter  .gridBox  .box .text {
+    overflow-y: hidden;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    font-family: var(--font-02);
+
+}
+.whatsapp_float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+  }
+  .whatsapp-icon {
+    margin-top: 16px;
+  }
+
+  /* for mobile */
+  @media screen and (max-width: 767px){
+    .whatsapp-icon {
+      margin-top: 10px;
+    }
+    .whatsapp_float {
+      width: 40px;
+      height: 40px;
+      bottom: 20px;
+      right: 10px;
+      font-size: 22px;
+    }
+  }
+  .phone_float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    left: 40px; /* Changed right to left */
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.phone-icon {
+    margin-top: 16px;
+}
+
+/* for mobile */
+@media screen and (max-width: 767px){
+    .phone-icon {
+        margin-top: 10px;
+    }
+    .phone_float {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        left: 10px; /* Changed right to left */
+        font-size: 22px;
+    }
+}

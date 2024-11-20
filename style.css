@@ -1,0 +1,1040 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Philosopher&family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    
+
+}
+
+:root {
+    --font-01: 'Poppins', sans-serif;
+    --font-02: 'Philosopher', sans-serif;
+
+    /* color  */
+    --global-color-0: #e41345;
+    --global-color-1: #f70077;
+    --global-color-2: #1a1a1a;
+    --global-color-3: #3e4359;
+    --global-color-4: #f7f7f7;
+    --global-color-5: #fff;
+    --global-color-6: #243673;
+    --global-color-7: #BFD1FF;
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    /* position: relative; */
+    height: 86px;
+    width: 100%;
+    padding: 0 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+
+
+    background-color: #101010; 
+    /* for sometime only after that we will remove it */
+}
+
+header .logo {
+    color: #FFD1B7 ;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: xx-large;
+    font-family: 'Playfair Display', serif;
+
+
+    text-shadow: .5px .5px 3px var(--global-color-1);
+    transition: .4s;
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+}
+
+header ul {
+    position: relative;
+}
+
+header ul li {
+    list-style: none;
+    float: left;
+    position: relative;
+}
+
+header ul li a {
+    font-size: 1.1em;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: #Fff;
+    display: flex;
+
+    justify-content: space-between;
+    font-weight: 500;
+    transition: all .4s ease;
+}
+
+header ul li a:hover {
+    color: #FFD1B7;
+}
+
+header ul li #NavNum {
+    border: 2px solid  #FFD1B7;
+    padding: 20px 35px;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: 700;
+    color:white;
+}
+
+header ul li #NavNum:hover {
+    background-color: #424640fd;
+}
+
+/* Now it's time to make it responsive  */
+@media (max-width:1024px) {
+
+    header {
+        padding: 10px;
+        overflow-x: visible;
+    }
+
+    header nav {
+        position: absolute;
+        width: 100%;
+        top: 88px;
+        left: 0;
+        display: none;
+    }
+
+    header.active nav {
+        display: block;
+    }
+
+    header ul li {
+        width: 100%;
+    }
+
+    header ul li a {
+        border: 1px solid #434343;
+        position: relative;
+        z-index: 3;
+        font-weight: 800;
+    }
+
+    header ul li a:hover {
+        color: var(--global-color-1);
+    }
+
+    header ul li a:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: -1;
+        opacity: .8;
+    }
+
+    header ul li #NavNum {
+        width: fit-content;
+        display: none;
+    }
+
+
+    /* menuToggle */
+    .menuToggle {
+        position: relative;
+        width: 40px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuToggle::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        box-shadow: 0 12px #fff;
+        transform: translateY(-12px);
+
+    }
+
+    .menuToggle::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        transform: translateY(12px);
+    }
+
+    /* .active  */
+    header.active .menuToggle::before {
+        transform: rotate(45deg);
+        box-shadow: 0 0 #Fff;
+    }
+
+    header.active .menuToggle::after {
+        transform: rotate(315deg);
+    }
+
+    section.active {
+        position: relative;
+    }
+
+    section.active:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #474747;
+        z-index: 1;
+        opacity: .91;
+    }
+}
+
+
+
+/* for sometime  */
+.sectionFirst {
+    padding: 9rem 0% 20rem;
+    position: relative;
+    /* background-color: #272727; */
+    color: var(--global-color-4);
+    /* height: 100vh; */
+    /*we will remove it later*/
+
+}
+
+.sectionFirst::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global-color-2);
+    z-index: -1;
+    opacity: 0;
+}
+
+.sectionFirst::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--global-color-2); */
+    background-image: url("../img/backgroundimg..jpg");
+    z-index: -1;
+    opacity: 1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* .sectionFirst .frontPage */
+.sectionFirst .frontPage {
+    padding: 0 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 60%;
+}
+
+.sectionFirst .frontPage .address {
+    color: var(--global-color-0);
+    font-size: 25px;
+    line-height: 1.2em;
+    font-family: var(--font-02);
+}
+
+.sectionFirst .frontPage .heading {
+    font-size: 3.24rem;
+    font-weight: 400;
+    font-family: var(--font-02);
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    color: #e4ecc8ce; /* Default color */
+}
+
+.sectionFirst .frontPage .heading::before,
+.sectionFirst .frontPage .heading::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(45deg, #a0e9e9, #fbc6c3); /* Gradient color */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.sectionFirst .frontPage .heading::before {
+    transform: translateX(-100%) rotate(10deg); /* Starts off-screen, with slight rotation */
+    opacity: 0;
+}
+
+.sectionFirst .frontPage .heading::after {
+    transform: translateX(100%) rotate(-10deg); /* Starts off-screen in opposite direction */
+    opacity: 0;
+}
+
+.sectionFirst .frontPage .heading:hover {
+    color: #ff7a5a; /* New color on hover */
+}
+
+.sectionFirst .frontPage .heading:hover::before {
+    transform: translateX(0) rotate(0deg); /* Slides in */
+    opacity: 1;
+}
+
+.sectionFirst .frontPage .heading:hover::after {
+    transform: translateX(0) rotate(0deg); /* Slides in */
+    opacity: 1;
+}
+
+
+/* .sectionFirst .frontPage .para {} */
+
+.sectionFirst .frontPage .btn {
+    margin-top: 9rem;
+    display: flex;
+    gap: 2rem;
+
+
+}
+
+.sectionFirst .frontPage .btn a {
+    border-radius: 7px;
+    padding: 17px 30px;
+    text-decoration: none;
+}
+.sectionFirst .frontPage .para{
+    border-radius: 3px;
+    color: white; /* Text color */
+  text-shadow: 
+    -1px -1px 0 #000, /* Top-left */
+    1px -1px 0 #000,  /* Top-right */
+    -1px 1px 0 #000,  /* Bottom-left */
+    1px 1px 0 #000;   /* Bottom-right */
+}
+
+.sectionFirst .frontPage .btn a:nth-child(1) {
+    border: 1px solid ;
+    background-color: #3B2F2F;
+    color: var(--global-color-4);
+    transition: all .4s ease;
+}
+
+.sectionFirst .frontPage .btn a:nth-child(1):hover {
+    border: 1px solid;
+    background-color:red;
+}
+
+.sectionFirst .frontPage .btn a:nth-child(2) {
+    border: 1px solid var(--global-color-0);
+    background-color: var(--global-color-4);
+    color: var(--global-color-0);
+    transition: all .4s ease;
+}
+
+.sectionFirst .frontPage .btn a:nth-child(2):hover {
+    border: 1px solid ;
+    background-color: blue;
+    color: #000;
+}
+
+
+/* transform-img */
+
+.transform-img {
+    padding: 0;
+    position: absolute;
+    width: 130%;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+}
+
+.transform-img img {
+    transform: rotate(180deg);
+    z-index: 2;
+    width: 100%;
+    position: relative;
+    bottom: -1px;
+}
+
+/* section second  */
+
+.sectionSecond {
+    padding: 0 2%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.sectionSecond .fourIMG {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    padding: 4rem 1rem 12rem;
+}
+
+.sectionSecond .fourIMG img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all .4s ease;
+}
+
+.sectionSecond .fourIMG img:hover {
+    transform: scale(1.1);
+}
+
+.sectionSecond .fourIMG img:nth-child(2n+1) {
+    margin-top: 4rem;
+}
+
+.sectionSecond .textInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sectionSecond .textInfo .greet {
+    color: #C09C83;
+    font-family: var(--font-02);
+    font-size: 1.5rem;
+    line-height: 1.2em;
+
+}
+
+.sectionSecond .textInfo .title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: var(--font-02);
+}
+
+/* .sectionSecond .textInfo .para {} */
+
+.sectionSecond .textInfo .btn {
+    border: 1px solid ;
+    width: fit-content;
+    border-radius: 7px;
+    padding: 17px 60px;
+    text-decoration: none;
+    background-color:#C09C83;
+    color: var(--global-color-4);
+    font-weight: 400;
+    transition: all .4s ease;
+
+}
+
+.sectionSecond .textInfo .btn:hover {
+    background-color:green ;
+    border: 1px solid ;
+}
+
+
+/* sectionThree */
+.sectionThree {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem 2%;
+    background-color: #8484840a;
+}
+
+.sectionThree > h2 {
+    font-size: 2.5rem;
+    font-family: var(--font-02);
+    color: #D2A679;
+    text-align: center;
+}
+
+.sectionThree > p {
+    text-align: center;
+}
+
+.sectionThree .servicesBox {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 280px));
+    gap: 2rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.sectionThree .servicesBox .box {
+    padding: 3rem 1rem 1rem;
+    box-shadow: 0 0 8px 3px #eeeeee;
+    background-color: #fff;
+    border-radius: 7px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.sectionThree .servicesBox .box:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional Heading Hover Effect */
+.sectionThree .servicesBox .box h2 {
+    font-family: var(--font-02);
+    line-height: 1.2em;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.sectionThree .servicesBox .box h2:hover {
+    color: #D2A679;
+}
+
+/* Optional Paragraph Hover Effect */
+.sectionThree .servicesBox .box p {
+    font-family: var(--font-02);
+    line-height: 24px;
+    transition: color 0.3s ease;
+}
+
+.sectionThree .servicesBox .box p:hover {
+    color: #555;
+}
+
+/* DiscountSection */
+
+.DiscountSection {
+    /* background-color: #474747; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 2% 10rem;
+    position: relative;
+    gap: 3rem;
+}
+
+.DiscountSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: url("../img/discountBackGround.jpg");
+    z-index: -2;
+    
+}
+
+.DiscountSection::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: -2;
+    opacity: .65;
+
+}
+
+.DiscountSection .img {
+    max-height: 7rem;
+    max-width: 7rem;
+    overflow-y: hidden;
+    background-color: blue ;
+    border-radius: 100px;
+
+}
+
+.DiscountSection .img img {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+
+.DiscountSection .textinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color:#123e09;
+}
+
+.DiscountSection .textinfo h2 {
+    font-size: 2.2em;
+    font-family: var(--font-02);
+}
+
+/* .DiscountSection .textinfo p {} */
+
+.DiscountSection a {
+    padding: 17px 30px;
+    border-radius: 7px;
+    text-decoration: none;
+    border: 1px solid var(--global-color-4);
+    background-color: transparent;
+    color: var(--global-color-4);
+    transition: all .4s ease;
+    text-align: center;
+}
+
+.DiscountSection a:hover {
+    background-color: var(--global-color-4);
+    color:#D2A679;
+    border: 1px solid #F4D1B2;
+}
+
+
+/* transformBox */
+
+.transformBox {
+    max-width: 1100px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    position: relative;
+    box-shadow: 1px 1px 15px 1px var(--global-color-2);
+    color: #fff;
+    border-radius: 10px;
+    transform: translateY(-100px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transformBox:hover {
+    transform: translateY(-120px) scale(1.05);
+    box-shadow: 1px 1px 25px 5px var(--global-color-2);
+}
+
+/* Background Image and Overlay */
+.transformBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: url("../img/discountimg.jpg");
+    z-index: -2;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.transformBox::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global-color-2);
+    z-index: -2;
+    opacity: 0.65;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover Effect for Background Overlay */
+.transformBox:hover::after {
+    opacity: 0.85;
+}
+
+/* Text Styling */
+.transformBox h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: var(--font-02);
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.transformBox h2:hover {
+    color: #ffd700; /* Example: Gold color on hover */
+}
+
+.transformBox p {
+    font-family: var(--font-02);
+    transition: color 0.3s ease;
+}
+
+.transformBox p:hover {
+    color: #f0f0f0; /* Subtle lighter shade */
+}
+
+/* sectionFive */
+
+/* Section Five Enhancements */
+.sectionFive {
+    padding: 2% 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.sectionFive .BeautySolutions {
+    background-color: #fff;
+    box-shadow: 0 0 30px 1px #e6e6e6;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sectionFive .BeautySolutions:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sectionFive .BeautySolutions h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: var(--font-02);
+    margin-bottom: 15px;
+    color: var(--global-color-1);
+    transition: color 0.3s ease;
+}
+
+.sectionFive .BeautySolutions h2:hover {
+    color: var(--global-color-2);
+}
+
+.sectionFive .BeautySolutions>span {
+    border: 1px solid var(--global-color-1);
+    display: block;
+    width: 2rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sectionFive .BeautySolutions>span:hover {
+    background-color: var(--global-color-1);
+    border-color: var(--global-color-2);
+}
+
+.sectionFive .BeautySolutions ul li {
+    list-style: none;
+    margin-top: 1rem;
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.sectionFive .BeautySolutions ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--global-color-1);
+    font-size: 1rem;
+    line-height: 1.2;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sectionFive .BeautySolutions ul li:hover {
+    color: var(--global-color-2);
+}
+
+.sectionFive .BeautySolutions ul li:hover::before {
+    color: var(--global-color-2);
+    transform: scale(1.2);
+}
+
+/* sectionSix */
+
+.sectionSix {
+    text-align: center;
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sectionSix h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: var(--font-02);
+}
+
+.sectionSix .icon {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.sectionSix .icon a {
+    height: 2rem;
+    width: 2rem;
+    text-decoration: none;
+    border: 2px solid var(--global-color-0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    border-radius: 50%;
+    color: var(--global-color-0);
+    transition: all .4s ease;
+}
+
+.sectionSix .icon a:hover {
+    background-color: var(--global-color-0);
+    color: #fff;
+}
+
+.sectionSix .imgicon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2rem;
+}
+
+.sectionSix .imgicon img {
+    border-radius: 50%;
+}
+
+.sectionSix .imgicon i {
+    font-size: 5rem;
+    color: var(--global-color-0);
+    position: absolute;
+    bottom: -20px;
+    padding-bottom: 1rem;
+}
+
+/* .sectionSix p {} */
+
+.sectionSix p small {
+    margin-top: 1rem;
+    display: block;
+    color: var(--global-color-0);
+}
+
+
+/* before footer  */
+
+.beforefooter {
+    padding: 2rem 2%;
+
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    gap: 2rem;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.beforefooter .box {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.beforefooter .box .logo {
+    color: var(--global-color-1);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: xx-large;
+    font-family: var(--font-02);
+
+    text-shadow: .5px .5px 3px var(--global-color-1);
+    transition: .4s;
+    width: fit-content;
+}
+
+.beforefooter .box .logo:hover {
+    transform: scale(1.1);
+}
+
+.beforefooter .box .bf-text {
+    text-decoration: none;
+    /* font-weight: 600; */
+    font-size: xx-large;
+    font-family: var(--font-02);
+
+}
+
+.beforefooter .box a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.beforefooter .box .subscribe {
+    display: flex;
+}
+
+.beforefooter .box .subscribe input {
+    width: 60%;
+    height: 55px;
+    padding: .5rem;
+
+}
+
+.beforefooter .box .subscribe .btn {
+    border: none;
+    box-sizing: border-box;
+    background-color: none;
+    background-color: var(--global-color-1);
+    color: #fff;
+    padding: .8rem 2rem;
+    font-size: 20px;
+    transition: all .4s ease;
+}
+
+.beforefooter .box .subscribe .btn:hover {
+    background-color: var(--global-color-0);
+}
+
+.beforefooter .box .icons a {
+    border: 1px solid var(--global-color-1);
+    padding: .5rem;
+    background-color: var(--global-color-1);
+    transition: all .5s ease;
+}
+
+.beforefooter .box .icons a:hover {
+    background-color: var(--global-color-0);
+}
+
+.beforefooter .box .address {
+    padding-right: 1rem;
+}
+
+
+
+
+
+
+
+/* footer */
+footer {
+    background-color: #2c2c2c; /* Dark background for footer */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 1rem 0; /* Padding for vertical spacing */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Responsive: stacks items on smaller screens */
+    gap: 1rem;
+}
+
+footer .fbox {
+    font-size: 1rem;
+}
+
+footer .fbox .by {
+    color: #d2a679; /* Gold-like color for link */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold link text */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+footer .fbox .by:hover {
+    color: #f1c40f; /* Brighter gold on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+footer .fbox a {
+    target:_blank;
+    transition: all 0.3s ease;
+}
+.whatsapp_float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+  }
+  .whatsapp-icon {
+    margin-top: 16px;
+  }
+
+  /* for mobile */
+  @media screen and (max-width: 767px){
+    .whatsapp-icon {
+      margin-top: 10px;
+    }
+    .whatsapp_float {
+      width: 40px;
+      height: 40px;
+      bottom: 20px;
+      right: 10px;
+      font-size: 22px;
+    }
+  }
+  .phone_float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    left: 40px; /* Changed right to left */
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.phone-icon {
+    margin-top: 16px;
+}
+
+/* for mobile */
+@media screen and (max-width: 767px){
+    .phone-icon {
+        margin-top: 10px;
+    }
+    .phone_float {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        left: 10px; /* Changed right to left */
+        font-size: 22px;
+    }
+}
